@@ -247,6 +247,14 @@ a:hover {
 a, a:visited {
     color: var(--text);
 }
+
+.circle-image {
+    width: 180px;          /* set width */
+    height: 180px;         /* set height equal to width */
+    object-fit: cover;     /* crop to fill the circle nicely */
+    border-radius: 50%;    /* makes it circular */
+    border: 3px solid var(--accent); /* optional border */
+}
 </style>
 </head>
 
@@ -275,7 +283,7 @@ a, a:visited {
         </div>
 
         <div class="portrait">
-            <img src="KApic.jpg" alt="Portrait of Your Name" />
+            <img src="vivapiczoom.jpg" alt="Portrait of Your Name" class="circle-image"/>
         </div>
     </section>
 
