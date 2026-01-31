@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Your Name — About</title>
+
+<style>
+:root {
+    --bg: #3E8536;        /* main leaf green */
+    --bg-soft: #56a03f;   /* lighter sunlit green */
+    --bg-deep: #2f6b2b;   /* depth for gradient */
+    --text: #fdfdf6;      /* soft off-white */
+    --muted: #e3e9d9;     /* light muted */
+    --accent: #d4e5b9;    /* warm lichen / paper highlight */
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Ubuntu, sans-serif;
+    color: var(--text);
+    line-height: 1.8;
+    position: relative;
+    background:
+        radial-gradient(900px 520px at 20% 0%, rgba(255,255,240,0.15), transparent 60%),
+        radial-gradient(800px 500px at 80% 20%, rgba(255,248,220,0.12), transparent 55%),
+        linear-gradient(180deg, var(--bg-soft), var(--bg-deep));
+}
+
+/* Linen paper texture overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,240,0.04),
+            rgba(255,255,240,0.04) 2px,
+            rgba(0,0,0,0.01) 2px,
+            rgba(0,0,0,0.01) 4px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,240,0.035),
+            rgba(255,255,240,0.035) 2px,
+            rgba(0,0,0,0.01) 2px,
+            rgba(0,0,0,0.01) 4px
+        );
+    opacity: 0.08;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+    background: linear-gradient(
+        to bottom,
+        rgba(62,133,54,0.85),
+        rgba(62,133,54,0.55),
+        rgba(62,133,54,0)
+    );
+    backdrop-filter: blur(6px);
+}
+
+nav .logo {
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+nav a {
+    color: var(--muted);
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: var(--text);
+}
+
+/* Layout */
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 160px 24px 100px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 70px;
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+@media (min-width: 900px) {
+    .hero {
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 120px;
+    }
+}
+
+.hero-text h1 {
+    font-size: clamp(2.6rem, 5vw, 3.5rem);
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 520px;
+}
+
+/* Portrait */
+.portrait {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 3 / 4;
+}
+
+.portrait::before {
+    content: "";
+    position: absolute;
+    inset: -28px;
+    background: linear-gradient(
+        145deg,
+        var(--accent),
+        transparent 65%
+    );
+    opacity: 0.34;
+    filter: blur(65px);
+    z-index: 0;
+}
+
+.portrait img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 36px;
+    filter: grayscale(4%) contrast(1.02) brightness(1.03);
+}
+
+/* Sections */
+section {
+    margin-bottom: 150px;
+}
+
+section h2 {
+    font-size: 1.65rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+}
+
+section p {
+    max-width: 660px;
+    font-size: 1.05rem;
+    color: var(--muted);
+}
+
+/* Publications */
+.list {
+    margin-top: 56px;
+}
+
+.entry {
+    margin-bottom: 48px;
+}
+
+.entry span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 6px;
+}
+
+.entry h3 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.entry p {
+    max-width: 640px;
+}
+
+/* Teaching list */
+.teaching-list {
+    margin-top: 36px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.teaching-list li {
+    margin-bottom: 18px;
+    padding-left: 22px;
+    position: relative;
+    color: var(--muted);
+}
+
+.teaching-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Footer */
+footer {
+    margin-top: 160px;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Your Name</div>
+    <div>
+        <a href="#">About</a>
+        <a href="#">Publications</a>
+        <a href="#">Teaching</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>
+                I design & build thoughtful digital experiences.
+            </h1>
+            <p>
+                I’m a creative technologist exploring clarity, materiality,
+                and systems that feel alive, generous, and grounded.
+            </p>
+        </div>
+
+        <div class="portrait">
+            <img src="your-photo.jpg" alt="Portrait of Your Name" />
+        </div>
+    </section>
+
+    <section>
+        <h2>About</h2>
+        <p>
+            My work is shaped by attention and care. I focus on digital
+            systems that feel closer to craft than consumption — slower,
+            warmer, and human-centered.
+        </p>
+    </section>
+
+    <section>
+        <h2>Publications</h2>
+        <div class="list">
+            <div class="entry">
+                <span>2024</span>
+                <h3>Title of Publication</h3>
+                <p>
+                    Journal or platform name. A short description of the work
+                    and its conceptual focus.
+                </p>
+            </div>
+
+            <div class="entry">
+                <span>2022</span>
+                <h3>Another Publication Title</h3>
+                <p>
+                    Brief summary of the publication and its contribution.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Teaching</h2>
+        <ul class="teaching-list">
+            <li>Creative Coding · University Name</li>
+            <li>Interaction Design · University Name</li>
+            <li>Digital Media Studio · University Name</li>
+            <li>Web Design & Development · University Name</li>
+            <li>Design Research Methods · University Name</li>
+        </ul>
+    </section>
+
+    <footer>
+        © 2026 Your Name · <a href="#">Email</a> · <a href="#">LinkedIn</a>
+    </footer>
+
+</div>
+</body>
+</html>
