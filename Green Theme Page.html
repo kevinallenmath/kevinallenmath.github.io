@@ -231,13 +231,29 @@ footer {
     font-size: 0.85rem;
     color: var(--muted);
 }
+
+/* Make all links white like your text */
+a {
+    color: var(--text);       /* same as main text */
+    text-decoration: none;    /* remove underline if you want */
+}
+
+/* Optional: on hover, lighten slightly or add subtle effect */
+a:hover {
+    color: var(--accent);     /* soft highlight color on hover */
+    text-decoration: underline; /* subtle underline if desired */
+}
+
+a, a:visited {
+    color: var(--text);
+}
 </style>
 </head>
 
 <body>
 
 <nav>
-    <div class="logo">Your Name</div>
+    <div class="logo">Kevin Allen</div>
     <div>
         <a href="#">About</a>
         <a href="#">Publications</a>
@@ -251,63 +267,55 @@ footer {
     <section class="hero">
         <div class="hero-text">
             <h1>
-                I design & build thoughtful digital experiences.
+                Dr. Kevin Allen
             </h1>
             <p>
-                I’m a creative technologist exploring clarity, materiality,
-                and systems that feel alive, generous, and grounded.
+                Assistant Professor of Mathematics, University College Cork
             </p>
         </div>
 
         <div class="portrait">
-            <img src="your-photo.jpg" alt="Portrait of Your Name" />
+            <img src="KApic.jpg" alt="Portrait of Your Name" />
         </div>
     </section>
 
     <section>
-        <h2>About</h2>
+        <h2>Research Interests</h2>
         <p>
-            My work is shaped by attention and care. I focus on digital
-            systems that feel closer to craft than consumption — slower,
-            warmer, and human-centered.
+            Knot Theory, Number Theory, Modular Forms, Combinatorics,  Projective Geometry
         </p>
     </section>
 
     <section>
         <h2>Publications</h2>
-        <div class="list">
-            <div class="entry">
-                <span>2024</span>
-                <h3>Title of Publication</h3>
-                <p>
-                    Journal or platform name. A short description of the work
-                    and its conceptual focus.
-                </p>
-            </div>
+	    <ol reversed>
+      		<li>K. Allen, R. Osburn and M. Storzer, <a href="aos28.pdf" target="_blank">“Generalized rank deviations for overpartitions”</a>, submitted.</li>
+      		<li>K. Allen and R. Osburn, <a href="https://arxiv.org/abs/2408.09789" target="_blank">“Unimodal sequences and mixed false theta functions”</a>, Advances in Mathematics, 473 (2025), Paper No. 110293.</li>
+      		<li>K. Allen and J. Sheekey, “<a href="https://mathscinet-ams-org.ucd.idm.oclc.org/mathscinet/article?mr=4865922" target="_blank">On translation hyperovals in semifield planes</a>”, <i>Designs, Codes and Cryptography</i>, 93 (2025), no. 2, 429–442.
+</li>
+    </ol>
 
-            <div class="entry">
-                <span>2022</span>
-                <h3>Another Publication Title</h3>
-                <p>
-                    Brief summary of the publication and its contribution.
-                </p>
-            </div>
-        </div>
     </section>
 
     <section>
         <h2>Teaching</h2>
         <ul class="teaching-list">
-            <li>Creative Coding · University Name</li>
-            <li>Interaction Design · University Name</li>
-            <li>Digital Media Studio · University Name</li>
-            <li>Web Design & Development · University Name</li>
-            <li>Design Research Methods · University Name</li>
+            MATH 10200 Matrix Algebra <br>
+        MATH 10210 Foundations of Maths for Computer Science I<br>
+        MATH 10030 Maths for Business<br>
+        MATH 10350 Calculus for Mathematical and Physical Sciences<br>
+        MATH 20320 Quantitative Methods in Business<br>
+	MATH 20300 Linear Algebra 2 for the Math Sci<br>
+	MATH 20060 Calculus of Several Variables<br>
+        ACM 10060 Applications of Differential Equations<br>
+        ACM 30030 Multivariable Calculus for Engineering II<br>
+        MST 30070 Differential Geometry
+
         </ul>
     </section>
 
     <footer>
-        © 2026 Your Name · <a href="#">Email</a> · <a href="#">LinkedIn</a>
+        Dr. Kevin Allen · <a href="#">kallen at ucc dot ie</a> · <a href="#">LinkedIn</a>
     </footer>
 
 </div>
