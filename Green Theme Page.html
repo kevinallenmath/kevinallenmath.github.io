@@ -3,16 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Your Name — About</title>
+<title>Kevin Allen — About</title>
 
 <style>
 :root {
-    --bg: #304529;        /* main forest green */
-    --bg-soft: #3a5331;   /* lighter wash */
-    --bg-deep: #263820;   /* subtle depth */
+    --bg: #304529;
+    --bg-soft: #3a5331;
+    --bg-deep: #263820;
+
+    --paper: #f8f6f0;
+    --ink: #2b2f2a;
+    --muted-ink: #4a544a;
+
     --text: #eef2ec;
     --muted: #c9d2c5;
-    --accent: #b7cfad;    /* warm sage */
+
+    --accent: #b7cfad;
+    --accent-warm: #8a6f4d;
 }
 
 /* Reset */
@@ -25,38 +32,27 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
                  Roboto, Ubuntu, sans-serif;
-    color: var(--text);
     line-height: 1.8;
-    position: relative;
     background:
-        radial-gradient(900px 520px at 20% 0%, rgba(255,255,240,0.15), transparent 60%),
-        radial-gradient(800px 500px at 80% 20%, rgba(255,248,220,0.12), transparent 55%),
+        radial-gradient(900px 520px at 20% 0%, rgba(255,255,240,0.12), transparent 60%),
         linear-gradient(180deg, var(--bg-soft), var(--bg-deep));
+    color: var(--text);
 }
 
-/* Linen paper texture overlay */
+/* Subtle texture */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: 1;
     pointer-events: none;
-    background:
-        repeating-linear-gradient(
-            0deg,
-            rgba(255,255,240,0.04),
-            rgba(255,255,240,0.04) 2px,
-            rgba(0,0,0,0.01) 2px,
-            rgba(0,0,0,0.01) 4px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            rgba(255,255,240,0.035),
-            rgba(255,255,240,0.035) 2px,
-            rgba(0,0,0,0.01) 2px,
-            rgba(0,0,0,0.01) 4px
-        );
-    opacity: 0.08;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,240,0.03),
+        rgba(255,255,240,0.03) 2px,
+        rgba(0,0,0,0.01) 2px,
+        rgba(0,0,0,0.01) 4px
+    );
+    opacity: 0.06;
 }
 
 /* Navigation */
@@ -69,23 +65,10 @@ nav {
     align-items: center;
     z-index: 5;
 
-    /* Soft semi-transparent green base */
-    background-color: rgba(62, 133, 54, 0.4); 
-
-    /* Apply blur to everything behind the nav */
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-
-    /* Optional: subtle gradient overlay for depth */
-    background-image: linear-gradient(
-        to bottom,
-        rgba(62,133,54,0.4),
-        rgba(62,133,54,0.2)
-    );
-
-    border-bottom: 1px solid rgba(255,255,245,0.05); /* subtle separator */
+    background-color: rgba(45, 68, 39, 0.55);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
 }
-
 
 nav .logo {
     font-weight: 500;
@@ -100,7 +83,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--text);
+    color: var(--accent);
 }
 
 /* Layout */
@@ -110,6 +93,14 @@ nav a:hover {
     padding: 160px 24px 100px;
     position: relative;
     z-index: 2;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 280px,
+        rgba(248,246,240,0.96) 360px
+    );
+    border-radius: 32px;
 }
 
 /* Hero */
@@ -117,104 +108,84 @@ nav a:hover {
     display: grid;
     grid-template-columns: 1fr;
     gap: 70px;
-    align-items: center;
     margin-bottom: 150px;
 }
 
+/* ASYMMETRIC COLUMNS */
 @media (min-width: 900px) {
     .hero {
-        grid-template-columns: 1.25fr 0.75fr;
+        grid-template-columns: 1.6fr 0.4fr;
         gap: 120px;
+        align-items: start;
     }
 }
 
+/* Name + title */
 .hero-text h1 {
     font-size: clamp(2.6rem, 5vw, 3.5rem);
     letter-spacing: -0.03em;
     margin-bottom: 28px;
+    color: var(--muted);
+    font-weight: 500;
 }
 
 .hero-text p {
     font-size: 1.15rem;
     color: var(--muted);
-    max-width: 520px;
+    max-width: 560px;
 }
 
 /* Portrait */
 .portrait {
-    position: relative;
-    width: 100%;
-    max-width: 360px;
-    aspect-ratio: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px; /* aligns with name baseline */
 }
 
-.portrait::before {
-    content: "";
-    position: absolute;
-    inset: -28px;
-    background: linear-gradient(
-        145deg,
-        var(--accent),
-        transparent 65%
-    );
-    opacity: 0.34;
-    filter: blur(65px);
-    z-index: 0;
-}
-
-.portrait img {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.circle-image {
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 36px;
-    filter: grayscale(4%) contrast(1.02) brightness(1.03);
+    border-radius: 50%;
 }
 
-/* Sections */
+/* Paper sections */
 section {
     margin-bottom: 150px;
+    color: var(--ink);
 }
 
 section h2 {
     font-size: 1.65rem;
-    letter-spacing: -0.01em;
     margin-bottom: 28px;
+    color: var(--bg-deep);
 }
 
 section p {
     max-width: 660px;
     font-size: 1.05rem;
-    color: var(--muted);
+    color: var(--muted-ink);
 }
 
 /* Publications */
-.list {
-    margin-top: 56px;
+ol {
+    margin-top: 32px;
 }
 
-.entry {
-    margin-bottom: 48px;
+ol li {
+    margin-bottom: 18px;
+    color: var(--muted-ink);
 }
 
-.entry span {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--accent);
-    margin-bottom: 6px;
+ol a {
+    color: var(--ink);
 }
 
-.entry h3 {
-    font-size: 1.05rem;
-    font-weight: 500;
-    margin-bottom: 6px;
+ol a:hover {
+    color: var(--accent-warm);
 }
 
-.entry p {
-    max-width: 640px;
-}
-
-/* Teaching list */
+/* Teaching */
 .teaching-list {
     margin-top: 36px;
     list-style: none;
@@ -222,48 +193,32 @@ section p {
 }
 
 .teaching-list li {
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     padding-left: 22px;
     position: relative;
-    color: var(--muted);
+    color: var(--muted-ink);
 }
 
 .teaching-list li::before {
     content: "—";
     position: absolute;
     left: 0;
-    color: var(--accent);
+    color: var(--accent-warm);
 }
 
 /* Footer */
 footer {
     margin-top: 160px;
     font-size: 0.85rem;
-    color: var(--muted);
+    color: var(--muted-ink);
 }
 
-/* Make all links white like your text */
-a {
-    color: var(--text);       /* same as main text */
-    text-decoration: none;    /* remove underline if you want */
+footer a {
+    color: var(--ink);
 }
 
-/* Optional: on hover, lighten slightly or add subtle effect */
-a:hover {
-    color: var(--accent);     /* soft highlight color on hover */
-    text-decoration: underline; /* subtle underline if desired */
-}
-
-a, a:visited {
-    color: var(--text);
-}
-
-.circle-image {
-    width: 180px;          /* set width */
-    height: 180px;         /* set height equal to width */
-    object-fit: cover;     /* crop to fill the circle nicely */
-    border-radius: 50%;    /* makes it circular */
-    /*border: 3px solid var(--accent);  optional border */
+footer a:hover {
+    color: var(--accent-warm);
 }
 </style>
 </head>
@@ -284,51 +239,59 @@ a, a:visited {
 
     <section class="hero">
         <div class="hero-text">
-            <h1>
-                Dr. Kevin Allen
-            </h1>
-            <p>
-                Assistant Professor of Mathematics, University College Cork
-            </p>
+            <h1>Dr. Kevin Allen</h1>
+            <p>Assistant Professor of Mathematics, University College Cork</p>
         </div>
 
         <div class="portrait">
-            <img src="vivapiczoom.jpg" alt="Portrait of Your Name" class="circle-image"/>
+            <img src="vivapiczoom.jpg" alt="Portrait of Kevin Allen" class="circle-image"/>
         </div>
     </section>
 
     <section>
         <h2>Research Interests</h2>
         <p>
-            Knot Theory, Number Theory, Modular Forms, Combinatorics,  Projective Geometry
+            Knot Theory, Number Theory, Modular Forms, Combinatorics, Projective Geometry
         </p>
     </section>
 
     <section>
         <h2>Publications</h2>
-	    <ol reversed>
-      		<li>K. Allen, R. Osburn and M. Storzer, <a href="aos28.pdf" target="_blank">“Generalized rank deviations for overpartitions”</a>, submitted.</li>
-      		<li>K. Allen and R. Osburn, <a href="https://arxiv.org/abs/2408.09789" target="_blank">“Unimodal sequences and mixed false theta functions”</a>, Advances in Mathematics, 473 (2025), Paper No. 110293.</li>
-      		<li>K. Allen and J. Sheekey, “<a href="https://mathscinet-ams-org.ucd.idm.oclc.org/mathscinet/article?mr=4865922" target="_blank">On translation hyperovals in semifield planes</a>”, <i>Designs, Codes and Cryptography</i>, 93 (2025), no. 2, 429–442.
-</li>
-    </ol>
-
+        <ol reversed>
+            <li>
+                K. Allen, R. Osburn and M. Storzer,
+                <a href="aos28.pdf" target="_blank">“Generalized rank deviations for overpartitions”</a>, submitted.
+            </li>
+            <li>
+                K. Allen and R. Osburn,
+                <a href="https://arxiv.org/abs/2408.09789" target="_blank">
+                    “Unimodal sequences and mixed false theta functions”
+                </a>,
+                Advances in Mathematics, 473 (2025).
+            </li>
+            <li>
+                K. Allen and J. Sheekey,
+                <a href="https://mathscinet-ams-org.ucd.idm.oclc.org/mathscinet/article?mr=4865922" target="_blank">
+                    On translation hyperovals in semifield planes
+                </a>,
+                <i>Designs, Codes and Cryptography</i>, 93 (2025), 429–442.
+            </li>
+        </ol>
     </section>
 
     <section>
         <h2>Teaching</h2>
         <ul class="teaching-list">
-            MATH 10200 Matrix Algebra <br>
-        MATH 10210 Foundations of Maths for Computer Science I<br>
-        MATH 10030 Maths for Business<br>
-        MATH 10350 Calculus for Mathematical and Physical Sciences<br>
-        MATH 20320 Quantitative Methods in Business<br>
-	MATH 20300 Linear Algebra 2 for the Math Sci<br>
-	MATH 20060 Calculus of Several Variables<br>
-        ACM 10060 Applications of Differential Equations<br>
-        ACM 30030 Multivariable Calculus for Engineering II<br>
-        MST 30070 Differential Geometry
-
+            <li>MATH 10200 Matrix Algebra</li>
+            <li>MATH 10210 Foundations of Maths for Computer Science I</li>
+            <li>MATH 10030 Maths for Business</li>
+            <li>MATH 10350 Calculus for Mathematical and Physical Sciences</li>
+            <li>MATH 20320 Quantitative Methods in Business</li>
+            <li>MATH 20300 Linear Algebra 2 for the Mathematical Sciences</li>
+            <li>MATH 20060 Calculus of Several Variables</li>
+            <li>ACM 10060 Applications of Differential Equations</li>
+            <li>ACM 30030 Multivariable Calculus for Engineering II</li>
+            <li>MST 30070 Differential Geometry</li>
         </ul>
     </section>
 
@@ -339,3 +302,4 @@ a, a:visited {
 </div>
 </body>
 </html>
+
