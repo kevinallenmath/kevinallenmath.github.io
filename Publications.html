@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kevin Allen — About</title>
+
+<style>
+:root {
+    --green: #304529;
+    --green-dark: #263820;
+
+    --paper: #f8f6f0;
+    --ink: #2b2f2a;
+    --muted-ink: #4a544a;
+
+    --text-on-green: #eef2ec;
+    --muted-on-green: #c9d2c5;
+
+    --accent-warm: #8a6f4d;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Ubuntu, sans-serif;
+    line-height: 1.8;
+    background: var(--green);
+    color: var(--text-on-green);
+}
+
+/* Navigation — solid, no blur */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--green-dark);
+    z-index: 10;
+}
+
+nav .logo {
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+nav a {
+    color: var(--muted-on-green);
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: var(--text-on-green);
+}
+
+/* Page container */
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 140px 24px 0;
+}
+
+/* HERO — green stays green */
+.hero {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 64px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+@media (max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* Name + title */
+.hero-text h1 {
+    font-size: clamp(2.6rem, 5vw, 3.4rem);
+    font-weight: 500;
+    margin-bottom: 18px;
+    color: var(--muted-on-green);
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    color: var(--muted-on-green);
+    max-width: 520px;
+}
+
+/* Portrait — larger and closer */
+.portrait {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.circle-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* PAPER CONTENT BLOCK */
+.paper {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 120px 80px 140px;
+    border-radius: 32px 32px 0 0;
+}
+
+@media (max-width: 800px) {
+    .paper {
+        padding: 80px 28px 120px;
+    }
+}
+
+/* Sections */
+section {
+    margin-bottom: 120px;
+}
+
+section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+    color: var(--green-dark);
+}
+
+section p,
+section li {
+    font-size: 1.05rem;
+    color: var(--muted-ink);
+    max-width: 680px;
+}
+
+/* Publications */
+ol {
+    margin-top: 28px;
+}
+
+ol li {
+    margin-bottom: 16px;
+}
+
+ol a {
+    color: var(--ink);
+}
+
+ol a:hover {
+    color: var(--accent-warm);
+}
+
+/* Teaching */
+.teaching-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 32px;
+}
+
+.teaching-list li {
+    margin-bottom: 14px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.teaching-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent-warm);
+}
+
+/* Footer */
+footer {
+    margin-top: 140px;
+    font-size: 0.85rem;
+    color: var(--muted-ink);
+}
+
+footer a {
+    color: var(--ink);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Kevin Allen</div>
+    <div>
+        <a href="#">About</a>
+        <a href="Publications.html">Publications</a>
+        <a href="#">Teaching</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<div class="container">
+
+
+    <!-- WHITE PAPER CONTENT -->
+    <div class="paper">
+
+        <section>
+            <h2>Publications</h2>
+            <ol reversed>
+                <li>
+                    K. Allen, R. Osburn and M. Storzer,
+                    <a href="aos28.pdf" target="_blank">“Generalized rank deviations for overpartitions”</a>, submitted.
+                </li>
+                <li>
+                    K. Allen and R. Osburn,
+                    <a href="https://arxiv.org/abs/2408.09789" target="_blank">
+                        “Unimodal sequences and mixed false theta functions”
+                    </a>,
+                    Advances in Mathematics, 473 (2025).
+                </li>
+                <li>
+                    K. Allen and J. Sheekey,
+                    <a href="https://mathscinet-ams-org.ucd.idm.oclc.org/mathscinet/article?mr=4865922" target="_blank">
+                        On translation hyperovals in semifield planes
+                    </a>,
+                    <i>Designs, Codes and Cryptography</i>, 93 (2025), 429–442.
+                </li>
+            </ol>
+        </section>
+
+        <footer>
+            Dr. Kevin Allen · <a href="#">kallen at ucc dot ie</a> · <a href="#">LinkedIn</a>
+        </footer>
+
+    </div>
+</div>
+
+</body>
+</html>
