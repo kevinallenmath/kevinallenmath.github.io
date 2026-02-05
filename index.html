@@ -1,156 +1,269 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kevin Allen — About</title>
 
-	<style>
-    		body 	{
-			font-family: Arial, sans-serif;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			margin: 0;
-			padding: 0;
-			}
+<style>
+:root {
+    --green: #304529;
+    --green-dark: #263820;
 
-		header h1 {
-			font-size: 3em;
-			}
+    --paper: #f8f6f0;
+    --ink: #2b2f2a;
+    --muted-ink: #4a544a;
 
-		header p {
-			font-size: 1.5em;
-			margin: 0;
-			}
+    --text-on-green: #eef2ec;
+    --muted-on-green: #c9d2c5;
 
-		nav ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			}
+    --accent-warm: #8a6f4d;
+}
 
-		nav li {
-			margin: 0 1em;
-			}
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-		nav a {
-			text-decoration: none;
-			color: #333;
-			padding: 0.5em;
-			}
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Ubuntu, sans-serif;
+    line-height: 1.8;
+    background: var(--green);
+    color: var(--text-on-green);
+}
 
-		nav a:hover {
-			background-color: #333;
-			color: #fff;
-			}
+/* Navigation — solid, no blur */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--green-dark);
+    z-index: 10;
+}
 
-		section {
-			margin: 2em 0;
-			}
+nav .logo {
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
 
-		h2 	{
-			font-size: 1.5em;
-			}
+nav a {
+    color: var(--muted-on-green);
+    margin-left: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
 
-		ul 	{
-			list-style: disc;
-			margin-left: 1.5em;
-			}
+nav a:hover {
+    color: var(--text-on-green);
+}
 
-		footer {
-			text-align: center;
-			margin-top: 2em;
-			font-size: 0.8em;
-			}
+/* Page container */
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 140px 24px 0;
+}
 
-    </style>
-	<a href="Green Theme Page.html">TEST</a>
-	<title>Kevin Allen</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Kevin Allen</title>
-    <link href="index.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <h1> Kevin Allen </h1>
+/* HERO — green stays green */
+.hero {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 64px;
+    align-items: center;
+    margin-bottom: 120px;
+}
 
-    <img src="KApic.jpg" alt="My Image" width="300" title="My Image" class="my-image">
-    <h2>Contact Information</h2>
-    <p>
-      Kevin Allen<br>
-      <a href="https://www.ucc.ie/en/matsci/">School of Mathematical Sciences</a><br>
-      University College Cork<br>
-      
-      Email: kallen at ucc dot ie<br>
-      <a href="Kevin_Allen_CV_27_11_25.pdf" target="_blank">Curriculum Vitae</a><br>
-      Supervisor: <a href="https://maths.ucd.ie/~osburn/" target="_blank">Robert Osburn</a>
-    <p>
-    <h2>Research Interests</h2>
-    <p> Knot Theory, Number Theory, Modular Forms, Combinatorics,  Projective Geometry<p>
-    
-    <h2>Publications</h2>
-    <ol reversed>
-      <li>K. Allen, R. Osburn and M. Storzer, <a href="aos28.pdf" target="_blank">“Generalized rank deviations for overpartitions”</a>, submitted.</li>
-      <li>K. Allen and R. Osburn, <a href="https://arxiv.org/abs/2408.09789" target="_blank">“Unimodal sequences and mixed false theta functions”</a>, Advances in Mathematics, 473 (2025), Paper No. 110293.</li>
-      <li>K. Allen and J. Sheekey, “<a href="https://mathscinet-ams-org.ucd.idm.oclc.org/mathscinet/article?mr=4865922" target="_blank">On translation hyperovals in semifield planes</a>”, <i>Designs, Codes and Cryptography</i>, 93 (2025), no. 2, 429–442.
-</li>
-    </ol>
-    
-    <h2>Teaching (TA/ Tutor Roles)</h2>
-    <ul>
-        MATH 10200 Matrix Algebra <br>
-        MATH 10210 Foundations of Maths for Computer Science I<br>
-        MATH 10030 Maths for Business<br>
-        MATH 10350 Calculus for Mathematical and Physical Sciences<br>
-        MATH 20320 Quantitative Methods in Business<br>
-	MATH 20300 Linear Algebra 2 for the Math Sci<br>
-	MATH 20060 Calculus of Several Variables<br>
-        ACM 10060 Applications of Differential Equations<br>
-        ACM 30030 Multivariable Calculus for Engineering II<br>
-        MST 30070 Differential Geometry
-    </ul>
-    
-    <h2>Recent and Upcoming Talks</h2>
-    <ul>
-	<a href="http://www.fields.utoronto.ca/activities/23-24/CNTA-XVI" target="_blank">Canadian Number Theory Association Meeting</a>, Fields Institute, June 2024 (<a href="https://www.youtube.com/watch?v=fombGFsUhfc" target="_blank">Video of talk</a>)<br>
-      <a href="https://iecl.univ-lorraine.fr/ja2023/" target="_blank">32èmes Journées Arithmétiques</a>, Université de Lorraine, July 2023 <br>
-      <a href="http://automorphicformsworkshop.org/" target="_blank">35th Automorphic Forms Workshop</a>,  LSU, May 2023 <br>
-      Workshop on Integer Partitions, Nesin Mathematics Village, June 2022<br>
-     Short PhD Talks, UCD Mathematical Society, Nov 2021
-    </ul>
-    
-    <h2>Recent and Upcoming Conferences</h2>
-    <ul>
-	<a href="https://conferences.cirm-math.fr/3134.html" target="_blank">Building Bridges: 6th EU/US Summer School & Workshop on Automorphic Forms and Related Topics (BB6)
-School and Workshop on Automorphic Forms and Related  Topics</a>, CIRM, September 2024<br>
-	<a href="http://www.fields.utoronto.ca/activities/23-24/CNTA-XVI" target="_blank">Canadian Number Theory Association Meeting</a>, Fields Institute, June 2024<br>
-      	<a href="https://iecl.univ-lorraine.fr/ja2023/" target="_blank">32èmes Journées Arithmétiques</a>, Université de Lorraine, July 2023 <br>
-      	<a href="http://automorphicformsworkshop.org/" target="_blank">35th Automorphic Forms Workshop</a>,  LSU, May 2023 <br>
-      	<a href="http://ramanujaneuler.tilda.ws/" target="_blank">Ramanujan and Euler: Partitions, mock theta functions, and q-series</a>, Online Number Theory School, July 2022 <br>
-      	<a href="https://nesinkoyleri.org/en/events/2022-summer-school-in-theory-of-partitions/" target="_blank">Workshop on Integer Partitions
- </a>, Nesin Mathematics Village, June 2022 <br>
-      	<a href="https://sites.google.com/view/utrgv-cbms2022/main-page?authuser=0" target="_blank">2022 NSF-CBMS Regional Research Conferences in the Mathematical Sciences: 
-Ramanujan’s Partition Congruences, Mock Theta Functions, and Beyond</a>, University of Texas RGV, May 2022
-    </ul>
-    
-    <h2>Funding and Awards</h2>
-    <ul>
-        UCD Research Demonstratorship 2021 <br>
-        UCD Casey Medal 2020 <br>
-        UCD Stage 3 Scholar 2018 <br>
-        UCD Entrance Scholar 2016
-    </ul>
-    
-    <h2>Theses</h2>       <!-- LINK DISSERTATIONS-->
-    <ul>
-	<li>PhD Mathematics: <i>"</i><a href="Thesis_Allen_Final.pdf" target="_blank"><i>q-Series and Modularity</i></a><i>"</i></li>
-	<li>MSc Mathematical Science: <i>"Hyperovals, Semifields and Cherowitzo's Conjecture"</i></li>
-        <li>BSc Mathematics: <i>"Semifields: A Classification Problem"</i></li>
-    </ul>
+@media (max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
 
-</body></html>
+/* Name + title 
+.hero-text h1 {
+    font-size: clamp(2.6rem, 5vw, 3.4rem);
+    font-weight: 500;
+    margin-bottom: 18px;
+    color: var(--muted-on-green);
+}*/
+
+.hero-text h1 {
+    font-size: 2.1rem;
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+    color: var(--muted-on-green);
+	margin-left: 80px;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    color: var(--muted-on-green);
+    max-width: 520px;
+    margin-left: 80px;
+}
+
+.intro {
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Portrait — larger and closer */
+.portrait {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.circle-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* PAPER CONTENT BLOCK */
+.paper {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 40px 80px 60px 80px;
+    border-radius: 32px 32px 32px 32px;
+}
+
+@media (max-width: 800px) {
+    .paper {
+        padding: 80px 28px 120px;
+    }
+}
+
+
+
+/* Sections */
+section {
+    margin-bottom: 120px;
+}
+
+section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+    color: var(--green-dark);
+}
+
+section p,
+section li {
+    font-size: 1.05rem;
+    color: var(--muted-ink);
+    max-width: 680px;
+}
+
+/* Publications */
+ol {
+    margin-top: 28px;
+}
+
+ol li {
+    margin-bottom: 16px;
+}
+
+ol a {
+    color: var(--ink);
+}
+
+ol a:hover {
+    color: var(--accent-warm);
+}
+
+/* Teaching */
+.teaching-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 32px;
+}
+
+.teaching-list li {
+    margin-bottom: 14px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.teaching-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent-warm);
+}
+section:last-of-type {
+    margin-bottom: 0;
+}
+/* Footer */
+footer {
+    margin-top: 140px;
+    font-size: 0.85rem;
+    color: var(--muted-ink);
+}
+
+footer a {
+    color: var(--ink);
+}
+
+.ink-link {
+    color: var(--ink);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo"> <a href="index.html"> Kevin Allen </a> </div>
+
+    <div>
+        <a href="Publications.html">Publications</a>
+        <a href="Teaching.html">Teaching</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Kevin Allen</h1>
+            <p>Assistant Professor of Mathematics, University College Cork</p>
+        </div>
+
+        <div class="portrait">
+            <img src="vivapiczoom.jpg" alt="Portrait of Kevin Allen" class="circle-image"/>
+        </div>
+    </section>
+<br>
+
+    <!-- WHITE PAPER CONTENT -->
+    <div class="paper">
+
+        <section>
+            <h2>Contact</h2>
+            <p> UCC School of Mathematical Sciences, Western Gateway Building, T12 XF62, Cork
+<br>		Office: G.57
+<br>	
+		Email: kallen at ucc dot ie
+<br>
+		<a href="https://www.linkedin.com/in/kevinallenmath/" class="ink-link">LinkedIn</a>
+            </p>
+
+	
+        </section>
+
+
+
+    </div>
+</div>
+
+</body>
+</html>
